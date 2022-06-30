@@ -5,6 +5,7 @@ import Logo from './components/logo/Logo';
 import ImageLinkForm from './components/imageLinkForm/ImageLinkForm';
 import Rank from './components/rank/Rank';
 import FaceRecognition from './components/faceRecognition/FaceRecognition';
+import SignIn from './components/signIn/SignIn';
 import Clarifai from 'clarifai' ;
  
 const app = new Clarifai.App({
@@ -51,6 +52,7 @@ class App extends Component {
     return (
       <div className="App">
       <Navigation />
+      <SignIn/>
       <Logo />
       <Rank />
       <ImageLinkForm 

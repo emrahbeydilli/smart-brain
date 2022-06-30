@@ -2,7 +2,6 @@ import React from 'react';
 import './FaceRecognition.css';
 
 const FaceRecognition = ({ imageUrl, box }) => {
-    console.log(box);
     return (
         <div className='flex justify-center mt3'>
             <div className='absolute'>
