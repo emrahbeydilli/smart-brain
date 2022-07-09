@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Children } from 'react';
 
-const Rank = () => {
+const Rank = ({name,entries}) => {
+    console.log(name,entries);
     return ( 
         <div>
             <div className='f3'>
-            {'Emrah, your current rank is #5'}
+            {`${name}, your current rank is ${entries}`}
             </div>
         </div>
      );
