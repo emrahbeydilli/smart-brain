@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 
 const Rank = ({name,entries}) => {
-    console.log(name,entries);
+    // console.log(name,entries);
     return ( 
         <div>
             <div className='f3'>

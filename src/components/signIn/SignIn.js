@@ -28,8 +28,9 @@ class SignIn extends React.Component {
 ,            })
         })
         .then(response=>response.json())
-        .then(data=>{
-            if (data === 'success'){
+        .then(user=>{
+            if (user.id){
+                this.props.loadUser(user);
                 this.props.onRouteChange('home');
             }
         })
@@ -37,7 +38,6 @@ class SignIn extends React.Component {
     }
 
     render(){
-        const {onRouteChange} = this.props;
         return (
             <main className="pv4 ph5 black-80 ba br2 b--black-10 dib shadow-5">
                 <div className="measure center">

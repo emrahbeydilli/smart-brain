@@ -66,7 +66,9 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input })
-    app.models.predict(Clarifai.FACE_DETECT_MODEL,
+    app.models
+    .predict(
+      Clarifai.FACE_DETECT_MODEL,
       this.state.input)
       .then(response =>{
         if (response) {
@@ -75,7 +77,8 @@ class App extends Component {
             headers:{'Content-Type': 'application/json'},
             body: JSON.stringify({
                 id:this.state.user.id
-,            })
+            })
+            
           })
           .then(response=>response.json())
           .then(count=>{
@@ -115,7 +118,7 @@ class App extends Component {
           </div>
           : (
             route === 'signin'
-              ? <SignIn onRouteChange={this.onRouteChange} />
+              ? <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
               : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
           )
 
